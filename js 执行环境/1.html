@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>js 执行顺序</title>
+  </head>
+  <body>
+    <script>
+      //在提升的过程中，相同的函数会覆盖上一个函数，并且函数优先于变量提升
+      b(); // call b second
+
+      function b() {
+        console.log("call b fist");
+      }
+      function b() {
+        console.log("call b second");
+      }
+      var b = "Hello world";
+    </script>
+
+    <script>
+      b(); // b is not a  function
+
+      var b = function() {
+        console.log("call b fist");
+      };
+    </script>
+  </body>
+</html>
